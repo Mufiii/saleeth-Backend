@@ -185,6 +185,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.ebook.marku.in",
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
