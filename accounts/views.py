@@ -6,6 +6,8 @@ from .serializers import RegisterSerializer, LoginSerializer, get_tokens_for_use
 from books.models import Book
 from books.serializers import BookListSerializer
 from rest_framework import permissions
+from django.http import JsonResponse
+
 
 
 class RegisterView(APIView):
@@ -76,4 +78,6 @@ class ProfileView(APIView):
         serializer = UserProfileSerializer(request.user)
         return Response(serializer.data, status=status.HTTP_200_OK)
         
-        
+def health_check(request):
+    return JsonResponse({"status": "ok", "message": "Backend is reaching successfully"})
+
