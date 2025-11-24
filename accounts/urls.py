@@ -8,6 +8,9 @@ urlpatterns = [
     path('home/', HomeView.as_view(), name='home'),
     path('me/', ProfileView.as_view(), name='profile'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path("health/", health_check),
+    path("health/", health_check),  
 ]
+
+
+
     

@@ -180,7 +180,10 @@ SIMPLE_JWT = {
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
-CORS_ALLOWED_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://ebook.marku.in",
+    "https://www.ebook.marku.in",
+]
 
 
 CSRF_TRUSTED_ORIGINS = [
