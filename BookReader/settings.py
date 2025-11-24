@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-jwhm5&aafrdx=694a4rh-2t!r^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -88,15 +88,13 @@ WSGI_APPLICATION = 'BookReader.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'saleeth_db'),
-        'USER': os.getenv('DB_USER', 'postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', ''),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'NAME': 'saleethDb',          
+        'USER': 'saleethuser',        
+        'PASSWORD': 'MlYummYTJRV8jHJPzYPP',
+        'HOST': 'saleethdb.cpuwqokyej82.eu-north-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -139,6 +137,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
+STATIC_ROOT = '/home/ubuntu/saleeth-Backend/static/'
 
 STATIC_URL = 'static/'
 
@@ -180,9 +179,19 @@ SIMPLE_JWT = {
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",  # your React frontend
+    "https://main.d3daoccfurbfvr.amplifyapp.com",
+    "https://ebook.marku.in",
+    "https://www.ebook.marku.in",
+     "https://ebook.marku.in"
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://main.d3daoccfurbfvr.amplifyapp.com",
+    "https://ebook.marku.in",
+    "https://www.ebook.marku.in",
+     "https://ebook.marku.in"
+]
+
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
